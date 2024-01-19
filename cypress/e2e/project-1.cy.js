@@ -40,7 +40,7 @@ describe('validate elements on Contact Us page', () => {
         cy.get('.control>.label').should('have.text', 'Gender *')
     })
     it('Validate that the Gender is required', () => {
-        cy.get('input[type="radio"][name="question"].mr-1[required]').should('have.attr', 'required')
+        cy.get('.mr-1[required]').should('have.attr', 'required')
     })
 
     it('Validate the options are “Female”, “Male” and “Prefer not to disclose”', () => {
@@ -62,7 +62,7 @@ describe('validate elements on Contact Us page', () => {
         cy.get('[type="radio"]').eq(1).should('be.checked')
         cy.get('[type="radio"]').not(':eq(1)').should('not.be.checked')
     })
-
+    
 
     it('Validate that the Address input box is displayed', () => {
         cy.get('.input[placeholder="Enter your address"]').should('be.visible')
@@ -73,7 +73,7 @@ describe('validate elements on Contact Us page', () => {
     })
 
     it('Validate that the label of the Address input box is “Address”', () => {
-        cy.get(':nth-child(3) > label').should('have.text', 'Address')
+        cy.get(':nth-child(3) >.label').should('have.text', 'Address')
     })
 
     it('Validate that the placeholder of the Address input box is “Enter your address*”', () => {
@@ -89,7 +89,7 @@ describe('validate elements on Contact Us page', () => {
     })
 
     it('Validate that the label of the Email input box is “Email *”', () => {
-        cy.get(':nth-child(4)>label').should('have.text', 'Email *')
+        cy.get(':nth-child(4)>.label').should('have.text', 'Email *')
     })
 
     it('Validate that the placeholder of the Email input box is “Enter your email”', () => {
@@ -106,61 +106,61 @@ describe('validate elements on Contact Us page', () => {
         cy.get(':nth-child(5) > .label').should('have.text', 'Phone')
     })
 
-    it('Validate that the placeholder of thePhone input box is “Enter your phone number”',() => {
+    it('Validate that the placeholder of thePhone input box is “Enter your phone number”', () => {
         cy.get('.input[placeholder="Enter your phone number"]').should('have.attr', 'placeholder', 'Enter your phone number')
     })
 
     it('Validate that the Message text area is displayed and is not required', () => {
-         cy.get('.textarea').should('be.visible')
-         .should('not.have.attr', 'required')    
+        cy.get('.textarea').should('be.visible')
+            .should('not.have.attr', 'required')
     })
 
     it('Validate that the label of the Message text area is “Message”', () => {
-        cy.get(':nth-child(6).field>.label').should('have.text', 'Message')
-    }) 
-    
-     it('Validate that the placeholder of the Message text area is “Type your message here…”', () => {
+        cy.get(':nth-child(6)>.label').should('have.text', 'Message')
+    })
+
+    it('Validate that the placeholder of the Message text area is “Type your message here…”', () => {
         cy.get('.textarea[placeholder="Type your message here..."]')
-        .should('have.attr', 'placeholder', 'Type your message here...')
+            .should('have.attr', 'placeholder', 'Type your message here...')
     })
 
     it('Validate the label is “I give my consent to be contacted.”', () => {
-         cy.get('.checkbox').should('be.visible')
+        cy.get('.checkbox').should('be.visible')
     })
 
     it('Validate that the Consent checkbox is required', () => {
-        cy.get('.checkbox>[type="checkbox"]').should('have.attr','required')
-     })
+        cy.get('.checkbox>[type="checkbox"]').should('have.attr', 'required')
+    })
 
-     it('Click on the “I give my consent to be contacted.” checkbox and validate it is selected', () => {
+    it('Click on the “I give my consent to be contacted.” checkbox and validate it is selected', () => {
         cy.get('.checkbox>[type="checkbox"]').check().should('be.checked')
-     })
+    })
 
-     it('Click on the “I give my consent to be contacted.” checkbox again and validate it is not selected', () => {
+    it('Click on the “I give my consent to be contacted.” checkbox again and validate it is not selected', () => {
         cy.get('.checkbox>[type="checkbox"]').uncheck().should('not.be.checked')
-     })
+    })
 
-     it('Validate the “SUBMIT” button is displayed and clickable', () => {
+    it('Validate the “SUBMIT” button is displayed and clickable', () => {
         cy.get('.control>.button')
-        .should('exist')
-        .and('be.enabled')
-     })
+            .should('exist')
+            .and('be.enabled')
+    })
 
-     it('Validate that the button text is “SUBMIT”', () => {
+    it('Validate that the button text is “SUBMIT”', () => {
         cy.get('.control>.button').should('have.text', 'SUBMIT')
-     })
+    })
 
-     it('Validate the submission form ', () => {
-         cy.get('.input[placeholder="Enter your full name"]').type('Ayca')
-         cy.get('[type="radio"]').eq(1).check().should('be.checked')
-         cy.get('.input[placeholder="Enter your address"]').type('Tulip Terr')
-         cy.get('.input[placeholder="Enter your email"]').type('nazayca@gmail.com')
-         cy.get('.input[placeholder="Enter your phone number"]').type('8508902324')
-         cy.get('.textarea').type('Hello World')
-         cy.get('.checkbox>[type="checkbox"]').check()
-         cy.get('.has-background-white-ter>form ').submit()
-         cy.contains('Thanks for submitting!').should('exist')
-         
-     })
+    it('Validate the submission form ', () => {
+        cy.get('.input[placeholder="Enter your full name"]').type('Ayca')
+        cy.get('[type="radio"]').eq(1).check().should('be.checked')
+        cy.get('.input[placeholder="Enter your address"]').type('Tulip Terr')
+        cy.get('.input[placeholder="Enter your email"]').type('nazayca@gmail.com')
+        cy.get('.input[placeholder="Enter your phone number"]').type('8508902324')
+        cy.get('.textarea').type('Hello World')
+        cy.get('.checkbox>[type="checkbox"]').check()
+        cy.get('.has-background-white-ter>form ').submit()
+        cy.contains('Thanks for submitting!').should('exist')
+
+    })
 })
 

@@ -1,0 +1,9 @@
+Js ,main purpose is run code on the browser , node js help js run on the serverside. Node.js, developers can now 
+build both front-end and back-end applications using JavaScript, 
+
+npm is default package manager to install and manage dependencies in js project
+npx is the executer , what pkaage is available on npm resgistr , without downloating npx istall 
+automaticlay 
+
+package.json is like manifest of the project gives you the name of the project dependencies
+version 
