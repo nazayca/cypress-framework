@@ -7,3 +7,5 @@ automaticlay
 
 package.json is like manifest of the project gives you the name of the project dependencies
 version 
+
+

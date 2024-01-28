@@ -46,7 +46,7 @@ describe('Actions', () => {
         .and('be.enabled')
         .and('have.attr', 'placeholder', 'Enter your message...')
         .type('Cypress')
-        .should('have.value', 'value', 'Cypress')
+        .should('have.value', 'Cypress')
         .clear()
         .should('have.attr', 'value', '')
     })

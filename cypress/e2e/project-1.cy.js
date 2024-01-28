@@ -1,4 +1,7 @@
 /// <reference types="cypress"/>
+
+import { contains } from "cypress/types/jquery"
+
 describe('validate elements on Contact Us page', () => {
     beforeEach(() => {
         cy.visit('https://techglobal-training.com/frontend/project-1')
@@ -53,10 +56,16 @@ describe('validate elements on Contact Us page', () => {
     })
 
     it('Click on the “Male” option and validate it is selected while the others are not selected', () => {
-        cy.get('[type="radio"]').first().click()
-        cy.get('[type="radio"]').first().should('be.checked')
-        cy.get('[type="radio"]').not(':first').should('not.be.checked')
-    })
+        const checkOptionAndValidateOthers = (optionTocheck, expectedText) => {
+
+            cy.contains(optionTocheck).find('input').check().should('be.checked')
+
+            expectedText.filter(option => option !== optionTocheck).beforeEach(unchekedOptions => {
+                contains(unchekedOptions).find('input').should('not.be.checked')
+            })
+
+        }
+        })
     it('Click on the “Female” option and validate it is selected while the others are not selected', () => {
         cy.get('[type="radio"]').eq(1).click()
         cy.get('[type="radio"]').eq(1).should('be.checked')
