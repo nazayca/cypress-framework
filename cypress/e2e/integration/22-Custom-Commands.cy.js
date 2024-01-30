@@ -1,13 +1,13 @@
 /// <reference types="cypress"/>
 
-describe("Custom Commands", () => {
+describe('Custom Commands', { tags: ['@custom', '@regression'] }, () => {
 
   beforeEach(() => {
-    cy.visit(`${Cypress.env('SITE_URL')}/frontend`);
-    cy.clickCard("Html Elements");
-  });
+    cy.visit(`${Cypress.env('SITE_URL')}/frontend`)
+    cy.clickCard('Html Elements')
+  })
 
-  it("Parent Commands", () => {
+  it('Parent Commands', { tags: '@parent' }, () => {
 
     /* Parent Commands */
     // cy.get()
@@ -24,7 +24,7 @@ describe("Custom Commands", () => {
 
     cy.login('Tech', 'Global')
 
-  });
+  })
 
   it('Child Command', () => {
 
@@ -37,7 +37,4 @@ describe("Custom Commands", () => {
 
     cy.get('#main_heading').assertAttribute('id', 'main_heading')
   })
-
-  // Create a function that takes selector, and value arguments
-// And selects the dropdown option from the web element
-});
+})

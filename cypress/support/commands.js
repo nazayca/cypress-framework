@@ -13,9 +13,9 @@
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
 
-Cypress.Commands.add("clickCard", (link) => {
-  cy.get(".cards").contains(link).click();
-});
+Cypress.Commands.add('clickCard', (link) => {
+  cy.get('.cards').contains(link).click()
+})
 
 // Create a function that takes selector, and value arguments
 // And selects the dropdown option from the web element
@@ -59,9 +59,9 @@ Cypress.Commands.add('logText', { prevSubject: true }, (subject) => {
   return cy.wrap(subject)
 })
 
-Cypress.Commands.add("haveText", { prevSubject: true }, (subject, value) => {
+Cypress.Commands.add('haveText', { prevSubject: true }, (subject, value) => {
   cy.wrap(subject).should('have.text', value)
-});
+})
 
 /**
  * Create a child custom command that will validate the attribute and the value of web element 
@@ -70,6 +70,7 @@ Cypress.Commands.add("haveText", { prevSubject: true }, (subject, value) => {
 Cypress.Commands.add('assertAttribute', { prevSubject: true }, (subject, attribute, value) => {
   cy.wrap(subject).should('have.attr', attribute, value)
 })
+
 
 //
 // -- This is a child command --

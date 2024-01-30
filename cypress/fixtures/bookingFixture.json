@@ -1,3 +1,50 @@
 {
-   "labels": ["Cabin Class", "From","To", "Depart", "Return", "Number of passengers", "Passenger 1"]
-}
+   "labels": [
+      "Cabin Class",
+      "From",
+      "To",
+      "Depart",
+      "Return",
+      "Number of passengers",
+      "Passenger 1"
+   ],
+   "options": [
+      "Business",
+      "Illinois",
+      "Florida",
+      "1",
+      "Senior (65+)"
+   ],
+   "expectedText": [
+      "Number of Passengers: 1",
+      "Passenger 1: Senior (65+)",
+      "Cabin class: Business"
+   ],
+   "options2": [
+      "First",
+      "California",
+      "Illinois",
+      "1",
+      "Adult (16-64)"
+   ],
+   "options3": [
+      "Premium Economy",
+      "New York",
+      "Texas",
+      "2",
+      "Adult (16-64)",
+      "Child (2-11)"
+   ],
+   "expectedText2":[
+      "Number of passengers: 1",
+      "Passenger 1: Adult (16-64)",
+      "Cabin Class: First"
+   ],
+
+   "expectedText3":[
+      "Number of passengers: 2",
+      "Passenger 1: Adult (16-64)",
+      "Passenger 2: Child (2-11)",
+      "Cabin Class: Premium Economy"
+   ]
+}  

@@ -1,26 +1,38 @@
 class BookingPage {
-    getRadioButton(){
+    getRadioButton() {
         return cy.get('.mr-1')
     }
 
-    getLabels(){
+    getLabels() {
         return cy.get('.field>.label')
     }
-    getDropdowns(){
-        return cy.get('.select')
+    getDropdowns() {
+        return cy.get('.select > select')
     }
 
-    getDateInput(){
+    getDateInput() {
         return cy.get('input[type="text"]')
     }
 
-    getDatePicker(){
+    getDatePicker() {
         return cy.get('.react-datepicker ')
     }
 
-    getBookButton(){
+    getBookButton() {
         return cy.get('.null')
+    }
+
+    getParagraph() {
+        return cy.get('.mt-4 >p')
+    }
+
+    getHeader1(){
+        return cy.get('.is-underlined')
+    }
+
+    getHeader3(){
+        return cy.get('.is-italic')
     }
 }
 
-export default BookingPage;
+export default BookingPage

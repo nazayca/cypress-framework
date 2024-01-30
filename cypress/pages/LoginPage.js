@@ -1,4 +1,4 @@
-import BasePage from "./BasePage"
+import BasePage from './BasePage'
 
 class LoginPage extends BasePage {
 
@@ -18,6 +18,8 @@ class LoginPage extends BasePage {
     getSuccessMessage(){
         return cy.get('#success_lgn')
     }
+
+
 
 
     /* Methods */

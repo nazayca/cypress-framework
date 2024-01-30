@@ -4,5 +4,5 @@
   "body": "Fixtures are a great way to mock data for responses to routes",
   "username": "TechGlobal",
   "password": "Test1234",
-  "headerText": ["Rank", "Company", "Employees","Country"]
+  "headers": ["Rank", "Company", "Employees", "Country"]
 }
